@@ -25,7 +25,7 @@
 						$table->datetime('start_day');
 						$table->integer('group_id')->unsigned(); //親テーブルグループのid
 						$table->timestamps();
-						//$table->foreign("group_id")->references("id")->on("groups");
+						$table->foreign("group_id")->references("id")->on("groups");
 
 
 

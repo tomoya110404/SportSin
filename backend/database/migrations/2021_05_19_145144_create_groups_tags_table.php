@@ -18,8 +18,8 @@
 						$table->increments('id');
 						$table->integer('group_id')->unsigned();
 						$table->integer('tag_id')->unsigned();
-						//$table->foreign("group_id")->references("id")->on("groups");
-						//$table->foreign("tag_id")->references("id")->on("tags");
+						$table->foreign("group_id")->references("id")->on("groups");
+						$table->foreign("tag_id")->references("id")->on("tags");
 
 
 

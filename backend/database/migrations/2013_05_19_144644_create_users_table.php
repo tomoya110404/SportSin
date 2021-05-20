@@ -17,11 +17,14 @@
 
 						$table->increments('id');
 						$table->text('name');
-						$table->string('mailAddress');
-						$table->string('password');
-						$table->datetime('birthday');
+						$table->string('email')->unique();
+						$table->string('password')->unique();
+						$table->datetime('birthday')->nullable();
 						$table->string('gender')->nullable();
 						$table->string('prefecture')->nullable();
+                        $table->string('remember_token')->nullable();
+                        $table->timestamp('updated_at')->nullable(); 
+                        $table->timestamp('created_at')->nullable(); 
 
 
 

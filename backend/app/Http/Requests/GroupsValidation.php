@@ -31,6 +31,7 @@ class GroupsValidation extends FormRequest
     {
         //[ *2. Validation rule description location ]
         return [
+                "name" => "max:50", //text('description')->nullable()
 				"description" => "nullable", //text('description')->nullable()
 				"desc_mini" => "required", //string('desc_mini')
 				"age-group" => "nullable", //string('age-group')->nullable()

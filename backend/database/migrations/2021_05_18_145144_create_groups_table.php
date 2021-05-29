@@ -16,6 +16,7 @@
                 Schema::create("groups", function (Blueprint $table) {
 
 						$table->increments('id');
+                        $table->string('name')->nullable();
 						$table->text('description')->nullable();
 						$table->string('desc_mini'); //一覧画面の見出し
 						$table->string('age-group')->nullable(); //おおよその年齢層

@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 
-Route::get('/home', 'HomeController@index')->name('home');
-    
 Auth::routes();
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/groups', 'GroupsController@index')->name('groups');
+Route::resource('/groups', 'GroupsController')->except(['index','show']);
+
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

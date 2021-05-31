@@ -11,7 +11,7 @@ class Group extends Model
     protected $table = "groups";
 
     protected $fillable = [
-        'name', 'description', 'desc_mini', 'age-group', 'about_level', 'groups_prefecture',
+        'name', 'description', 'desc_mini', 'age_group', 'about_level', 'groups_prefecture',
         'member'
     ];
 

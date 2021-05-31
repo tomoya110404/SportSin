@@ -40,7 +40,6 @@
             @endforeach
           </select>
         </div>
-
         <div>
           <label>説明文</label>
           <input type="text" name="description" value="説明文">

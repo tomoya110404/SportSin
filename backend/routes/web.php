@@ -16,7 +16,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/groups', 'GroupsController@index')->name('groups');
 Route::resource('/groups', 'GroupsController')->except(['index','show'])->middleware('auth');
-
+Route::resource('/groups', 'GroupsController')->only(['show']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

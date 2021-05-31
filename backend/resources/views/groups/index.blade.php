@@ -3,7 +3,7 @@
 @section('content')
 <section class="section">
   <div class="groups">
-    <h1>サークル作成ページ</h1>
+    <h1>サークル一覧ページ</h1>
     <ul class="groups__content">
       {{-- 仮の値 --}}
       @foreach($groups as $group)

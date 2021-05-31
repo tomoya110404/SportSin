@@ -3,6 +3,7 @@
 @section('content')
   <section class="section">
     <div class="groups-show">
+      <p>サークル詳細ページ</p>
       <div class="show__img">
         <img src="http://placeimg.com/300/300/nature" alt="失敗">
       </div>
@@ -40,8 +41,12 @@
         </li>
       </div>
       @if(Auth::id() === $group->user_id)
-       <p>消す</p>
-       <p>編集</p>
+        <form method="POST" action="{{ route("groups.destroy", ["group" => $group])}}">
+          @method('DELETE')
+          @csrf
+          <button type="submit">削除する</button>
+        </form>
+        <a href="{{ route("groups.edit", ['group' => $group]) }}">編集する</a>
       @endif
     </div>
   </section>

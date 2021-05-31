@@ -10,7 +10,8 @@
     @include("errors.error_group")
   </div>
   <div>
-    <form method="POST" action="{{ route('groups.store') }}">
+    <form method="POST" action="{{ route('groups.update', ["group" => $group]) }}">
+      @method("PATCH")
       @csrf
         <div>
           <label>サークル名</label>

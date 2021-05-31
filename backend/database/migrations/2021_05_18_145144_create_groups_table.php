@@ -16,13 +16,14 @@
                 Schema::create("groups", function (Blueprint $table) {
 
 						$table->increments('id');
-                        $table->string('name')->nullable();
-						$table->text('description')->nullable();
+                        $table->string('name');
+						$table->text('description');
 						$table->string('desc_mini'); //一覧画面の見出し
-						$table->string('age-group')->nullable(); //おおよその年齢層
-						$table->string('about_level'); //初心者、中級者、上級者などの括り
+						$table->string('age_group')->nullable(); //おおよその年齢層
+						$table->string('about_level')->nullable(); //初心者、中級者、上級者などの括り
 						$table->string('img')->nullable(); //画像のURL（保存場所はS3?）
 						$table->string('groups_prefecture'); //グループ活動が行われる都道府県
+                        $table->integer('member');
 						$table->timestamps();
 						$table->integer('user_id')->unsigned();
 						
@@ -30,7 +31,7 @@
                     //*********************************
                     // Foreign KEY [ Uncomment if you want to use!! ]
                     //*********************************
-                        //$table->foreign("user_id")->references("id")->on("users");
+                        $table->foreign("user_id")->references("id")->on("users");
 
 
 

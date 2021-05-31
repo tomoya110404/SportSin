@@ -15,8 +15,7 @@
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/groups', 'GroupsController@index')->name('groups');
-Route::resource('/groups', 'GroupsController')->except(['index','show']);
-
+Route::resource('/groups', 'GroupsController')->except(['index','show'])->middleware('auth');
 
 
 Route::group(['prefix' => 'admin'], function () {

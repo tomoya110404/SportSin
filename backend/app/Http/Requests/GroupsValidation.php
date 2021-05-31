@@ -39,7 +39,6 @@ class GroupsValidation extends FormRequest
 				"img" => "nullable", //string('img')->nullable()
 				"groups_prefecture" => "required", //string('groups_prefecture')
 				"user_id" => "required|integer", //integer('user_id')
-
             ];
         }
     
@@ -48,8 +47,8 @@ class GroupsValidation extends FormRequest
         //[Ja]https://readouble.com/laravel/6.x/ja/validation-php.html
         public function messages(){
             return [
-                //"email.required"  => "メールアドレスを入力してください",
-                //"email.max"       => "**文字以下で入力してください",
+                "email.required"  => "メールアドレスを入力してください",
+                "email.max"       => "**文字以下で入力してください",
             ];
         }
     

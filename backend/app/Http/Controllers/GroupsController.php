@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\GroupsValidation;
 use App\Group;
-use Illuminate\Support\Facades\Log;
+use App\User;
+use App\Http\Requests\GroupRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class GroupsController extends Controller
@@ -27,13 +28,12 @@ class GroupsController extends Controller
         ]);
     }
 
-    public function store(GroupsValidation $request, Group $group)
+    public function store(GroupRequest $request, Group $group)
     {
-      $group->fill($request->all);
-      $group->user_id = $request->user()->id;
+      $group->user_id = Auth::id();
+      $group->fill($request->all());
       $group->save();
-      dd($request->all());
-      var_dump($group);
-      return redirect()->route("groups.index");
+      return redirect()->route('groups');
     }
+
 }

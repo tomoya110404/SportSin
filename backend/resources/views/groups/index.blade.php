@@ -3,41 +3,25 @@
 @section('content')
 <section class="section">
   <div class="groups">
+    <h1>サークル作成ページ</h1>
     <ul class="groups__content">
       {{-- 仮の値 --}}
-      <li>
+      @foreach($groups as $group)
+      <li class="groups__content-post">
         <div>
           <img src="http://placeimg.com/100/100/nature" alt="失敗">
         </div>
         <div>
-          <p>チーム名</p>
+          <p>{{ $group->name }}</p>
         </div>
         <div>
-          <span>東京</span><span>10人</span>
+          <span>{{ $group->groups_prefecture }}</span><span>  10人</span>
         </div>
         <div>
-          <p>よろしくお願いします</p>
+          <p>{{ $group->desc_mini }}</p>
         </div>
       </li>
-      <li>
-        <div>
-          <img src="http://placeimg.com/100/100/nature" alt="失敗">
-        </div>
-        <div>
-          <p>チーム名</p>
-        </div>
-        <div>
-          <span>東京</span><span>10人</span>
-        </div>
-        <div>
-          <p>よろしくお願いします</p>
-        </div>
-      </li>
-      <li>
-        @foreach($groups as $group)
-        <p>{{ $group->name }}</p>
-        @endforeach
-      </li>
+      @endforeach
     </ul>
   </div>
   <p><a href="{{ route("groups.create")}}">サークルを作成するンゴ</a></p> 

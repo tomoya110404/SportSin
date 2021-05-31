@@ -7,20 +7,22 @@
     <ul class="groups__content">
       {{-- 仮の値 --}}
       @foreach($groups as $group)
-      <li class="groups__content-post">
-        <div>
-          <img src="http://placeimg.com/100/100/nature" alt="失敗">
-        </div>
-        <div>
-          <p>{{ $group->name }}</p>
-        </div>
-        <div>
-          <span>{{ $group->groups_prefecture }}</span><span>  10人</span>
-        </div>
-        <div>
-          <p>{{ $group->desc_mini }}</p>
-        </div>
-      </li>
+      <a href="{{ route("groups.show", ['group' => $group]) }}">
+        <li class="groups__content-post">
+          <div>
+            <img src="http://placeimg.com/100/100/nature" alt="失敗">
+          </div>
+          <div>
+            <p>{{ $group->name }}</p>
+          </div>
+          <div>
+            <span>{{ $group->groups_prefecture }}</span><span>  10人</span>
+          </div>
+          <div>
+            <p>{{ $group->desc_mini }}</p>
+          </div>
+        </li>
+      </a>
       @endforeach
     </ul>
   </div>
